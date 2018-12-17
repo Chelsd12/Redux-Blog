@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const Blog = ({ id, name, complete, dispatch }) => (
+const Blog = ({ id, name, body, complete, dispatch }) => (
     <div onClick={() => dispatch({ type: 'TOGGLE_BLOG', id })} 
          style={ complete ? { textDecoration: 'line-through', color: 'grey' } : {} }
     >
