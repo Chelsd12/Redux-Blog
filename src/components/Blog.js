@@ -5,8 +5,10 @@ const Blog = ({ id, name, body, complete, dispatch }) => (
     <div onClick={() => dispatch({ type: 'TOGGLE_BLOG', id })} 
          style={ complete ? { textDecoration: 'line-through', color: 'grey' } : {} }
     >
-        { name }
+    <h1>{ name }</h1>
+    <h3>{ body }</h3>
     </div>
+
 
 );//end of const Blog
 
