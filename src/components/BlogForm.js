@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Form, Container } from 'semantic-ui-react';
 
 class BlogForm extends React.Component {
     state = { name: "", body: ""};
@@ -21,15 +22,28 @@ class BlogForm extends React.Component {
     render() {
         const { name, body } = this.state;
         return (
-            <div>
-                <h1>Add a Blog</h1>
-                <form onSubmit={this.handleSubmit}>
-                <input name="name" value={name} onChange={this.handleChange} />
-                </form>
-                <form onSubmit={this.handleSubmit}>
-                <input name="body" value={body} onChange={this.handleChange} />
-                </form>
-            </div>
+            <Container>
+                <div>
+                    <h1>Add a Blog</h1>
+                    <Form onSubmit={this.handleSubmit}>
+                    <Form.Input 
+                    name="name" 
+                    placeholder="Title"
+                    required
+                    value={name} 
+                    onChange={this.handleChange} 
+                    />
+                    <Form.Input 
+                    name="body"
+                    placeholder="Body"
+                    required 
+                    value={body} 
+                    onChange={this.handleChange} 
+                    />
+                    <Form.Button color="green">Submit</Form.Button>
+                    </Form>
+                </div>
+            </Container>
         )//end of return
     };//end of render
 };//end of class BlogForm
